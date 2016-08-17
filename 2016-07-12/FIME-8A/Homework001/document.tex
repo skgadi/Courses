@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[cm]{fullpage}
+\usepackage[spanish,mexico]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{datatool}
+
+
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+
+
+\newcommand{\Subject}{Control Automático}
+\newcommand{\Group}{7B}
+\newcommand{\Carrera}{Mechanical Engineering}
+\newcommand{\ExamType}{Ordinario}
+\newcommand{\Date}{17/05/2016}
+\newcommand{\MaximumMarks}{10}
+
+
+\makeatletter
+% Blank/missing fields commands
+% \skipblank adds \\ to filled field; * version adds \space instead of newline
+\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+% \checkblank replaces blank fields with ***
+\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{***}{#1}}
+\makeatother
+
+\begin{document}
+	\linespread{2.5}
+	\DTLloaddb{addresses}{db/questions.csv} % use your actual address database here
+	\DTLforeach*{addresses}{%
+		\Name=Name,
+		\No=No}
+	{%
+		\setcounter{page}{1}
+		%\thispagestyle{empty}
+		\begin{center}
+			\begin{minipage}{.15\textwidth}
+				\includegraphics[width=\textwidth]{images/Uadec}
+			\end{minipage}
+			\begin{minipage}{.81\textwidth}
+				\Huge Facultad de Ingeniería Mecánica y Eléctrica
+			\end{minipage}
+		\end{center}
+		%\\[0.5cm]
+		\begin{center}
+			\begin{tabularx}{\textwidth}{ |>{\cellcolor{gray!25}}l|X|>{\cellcolor{gray!25}}l|l| }
+				\hline
+				Subject      	& \Subject  & Group         	& \Group    \\ \hline
+				Degree         	& \Carrera  & Date         		& \Date     \\ \hline
+				Name          	& \Name     & Registration \#	& \No       \\ \hline
+				Exam / Homework	& \ExamType & Calificación  	& \hspace{1cm} $/$ \MaximumMarks \\ \hline
+			\end{tabularx}
+		\end{center}
+		\begin{enumerate}
+			\item Entomology is the science that studies
+			\begin{enumerate}[label=(\alph*)]
+				\item an apple
+				\item a banana
+				\item a carrot
+				\item a durian
+			\end{enumerate}
+			\item Eritrea, which became the 182nd member of the UN in 1993, is in the continent of
+			\begin{enumerate}[label=(\alph*)]
+				\item Asia
+				\item Africa
+				\item Europe
+				\item Australia
+			\end{enumerate}
+			\item Hitler party which came into power in 1933 is known as
+			\begin{enumerate}[label=(\alph*)]
+				\item Labour Party
+				\item Nazi Party
+				\item Ku-Klux-Klan
+				\item Democratic Party
+			\end{enumerate}
+			\item Georgia, Uzbekistan and Turkmenistan became the members of UNO in
+			\begin{enumerate}[label=(\alph*)]
+				\item 1991
+				\item 1992
+				\item 1993
+				\item 1994
+			\end{enumerate}
+			\item During World War II, when did Germany attack France?
+			\begin{enumerate}[label=(\alph*)]
+				\item 1940
+				\item 1941
+				\item 1942
+				\item 1943
+			\end{enumerate}
+		\end{enumerate}
+		\clearpage
+	}
+\end{document}
