@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.6.14)  16 AUG 2016 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.6.14)  16 AUG 2016 19:50
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -815,54 +815,22 @@ LaTeX Info: Redefining \nameref on input line 36.
 \dtlkeys@addresses=\toks54
 \dtlrows@addresses=\count156
 \dtlcols@addresses=\count157
-Package epstopdf Info: Source file: <images/Uadec.eps>
-(epstopdf)                    date: 2016-08-16 23:54:28
-(epstopdf)                    size: 429738 bytes
-(epstopdf)             Output file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:30:03
-(epstopdf)                    size: 113803 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Uadec-eps-converted-
-to.pdf images/Uadec.eps>
-(epstopdf)             \includegraphics on input line 101.
-runsystem(epstopdf --outfile=images/Uadec-eps-converted-to.pdf images/Uadec.eps
-)...executed.
 
-Package epstopdf Info: Result file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:43
-(epstopdf)                    size: 113803 bytes.
+<images/uadec-original.png, id=4, 702.625pt x 838.13126pt>
+File: images/uadec-original.png Graphic file (type png)
 
-<images/Uadec-eps-converted-to.pdf, id=4, 72.27pt x 73.27374pt>
-File: images/Uadec-eps-converted-to.pdf Graphic file (type pdf)
-
-<use images/Uadec-eps-converted-to.pdf>
-Package pdftex.def Info: images/Uadec-eps-converted-to.pdf used on input line 1
-01.
-(pdftex.def)             Requested size: 79.33728pt x 80.4437pt.
+<use images/uadec-original.png>
+Package pdftex.def Info: images/uadec-original.png used on input line 101.
+(pdftex.def)             Requested size: 79.33728pt x 94.63739pt.
  [1
 
-{c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/Uadec-
-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <images/Uadec.eps>
-(epstopdf)                    date: 2016-08-16 23:54:28
-(epstopdf)                    size: 429738 bytes
-(epstopdf)             Output file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:43
-(epstopdf)                    size: 113803 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Uadec-eps-converted-
-to.pdf images/Uadec.eps>
-(epstopdf)             \includegraphics on input line 101.
-runsystem(epstopdf --outfile=images/Uadec-eps-converted-to.pdf images/Uadec.eps
-)...executed.
+{c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/uadec-
+original.png>]
+File: images/uadec-original.png Graphic file (type png)
 
-Package epstopdf Info: Result file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:44
-(epstopdf)                    size: 113803 bytes.
-File: images/Uadec-eps-converted-to.pdf Graphic file (type pdf)
-
-<use images/Uadec-eps-converted-to.pdf>
-Package pdftex.def Info: images/Uadec-eps-converted-to.pdf used on input line 1
-01.
-(pdftex.def)             Requested size: 79.33728pt x 80.4437pt.
+<use images/uadec-original.png>
+Package pdftex.def Info: images/uadec-original.png used on input line 101.
+(pdftex.def)             Requested size: 79.33728pt x 94.63739pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -871,26 +839,10 @@ l.101 	}
          [1
 
 ]
-Package epstopdf Info: Source file: <images/Uadec.eps>
-(epstopdf)                    date: 2016-08-16 23:54:28
-(epstopdf)                    size: 429738 bytes
-(epstopdf)             Output file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:44
-(epstopdf)                    size: 113803 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Uadec-eps-converted-
-to.pdf images/Uadec.eps>
-(epstopdf)             \includegraphics on input line 101.
-runsystem(epstopdf --outfile=images/Uadec-eps-converted-to.pdf images/Uadec.eps
-)...executed.
-
-Package epstopdf Info: Result file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:45
-(epstopdf)                    size: 113803 bytes.
-File: images/Uadec-eps-converted-to.pdf Graphic file (type pdf)
- <use images/Uadec-eps-converted-to.pdf>
-Package pdftex.def Info: images/Uadec-eps-converted-to.pdf used on input line 1
-01.
-(pdftex.def)             Requested size: 79.33728pt x 80.4437pt.
+File: images/uadec-original.png Graphic file (type png)
+ <use images/uadec-original.png>
+Package pdftex.def Info: images/uadec-original.png used on input line 101.
+(pdftex.def)             Requested size: 79.33728pt x 94.63739pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -899,26 +851,10 @@ l.101 	}
          [1
 
 ]
-Package epstopdf Info: Source file: <images/Uadec.eps>
-(epstopdf)                    date: 2016-08-16 23:54:28
-(epstopdf)                    size: 429738 bytes
-(epstopdf)             Output file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:45
-(epstopdf)                    size: 113803 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Uadec-eps-converted-
-to.pdf images/Uadec.eps>
-(epstopdf)             \includegraphics on input line 101.
-runsystem(epstopdf --outfile=images/Uadec-eps-converted-to.pdf images/Uadec.eps
-)...executed.
-
-Package epstopdf Info: Result file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:46
-(epstopdf)                    size: 113803 bytes.
-File: images/Uadec-eps-converted-to.pdf Graphic file (type pdf)
- <use images/Uadec-eps-converted-to.pdf>
-Package pdftex.def Info: images/Uadec-eps-converted-to.pdf used on input line 1
-01.
-(pdftex.def)             Requested size: 79.33728pt x 80.4437pt.
+File: images/uadec-original.png Graphic file (type png)
+ <use images/uadec-original.png>
+Package pdftex.def Info: images/uadec-original.png used on input line 101.
+(pdftex.def)             Requested size: 79.33728pt x 94.63739pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -927,26 +863,10 @@ l.101 	}
          [1
 
 ]
-Package epstopdf Info: Source file: <images/Uadec.eps>
-(epstopdf)                    date: 2016-08-16 23:54:28
-(epstopdf)                    size: 429738 bytes
-(epstopdf)             Output file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:46
-(epstopdf)                    size: 113803 bytes
-(epstopdf)             Command: <epstopdf --outfile=images/Uadec-eps-converted-
-to.pdf images/Uadec.eps>
-(epstopdf)             \includegraphics on input line 101.
-runsystem(epstopdf --outfile=images/Uadec-eps-converted-to.pdf images/Uadec.eps
-)...executed.
-
-Package epstopdf Info: Result file: <images/Uadec-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-08-16 19:31:47
-(epstopdf)                    size: 113803 bytes.
-File: images/Uadec-eps-converted-to.pdf Graphic file (type pdf)
- <use images/Uadec-eps-converted-to.pdf>
-Package pdftex.def Info: images/Uadec-eps-converted-to.pdf used on input line 1
-01.
-(pdftex.def)             Requested size: 79.33728pt x 80.4437pt.
+File: images/uadec-original.png Graphic file (type png)
+ <use images/uadec-original.png>
+Package pdftex.def Info: images/uadec-original.png used on input line 101.
+(pdftex.def)             Requested size: 79.33728pt x 94.63739pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
@@ -968,8 +888,8 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 9858 strings out of 493014
- 134119 string characters out of 6137016
+ 9846 strings out of 493014
+ 134042 string characters out of 6137016
  283458 words of memory out of 5000000
  13108 multiletter control sequences out of 15000+600000
  4393 words of font info for 17 fonts, out of 8000000 for 9000
@@ -978,10 +898,10 @@ Here is how much of TeX's memory you used:
 <c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on document.pdf (5 pages, 162823 bytes).
+Output written on document.pdf (5 pages, 965338 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 199 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
  133 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
