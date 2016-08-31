@@ -26,7 +26,7 @@ for itr = 1:size(No1,1)
     fprintf(AnsFile,',%s',num2str(Q1A^3));
     fprintf(AnsFile,',%s',num2str(Q1A^2*Q1B/Q1C));
     fprintf(AnsFile,',%s',num2str(Q1A/Q1B+Q1C));
-    fprintf(AnsFile,',%s',num2str(Q1A/(Q1B/Q1C+VarOOB1(itr))));
+    fprintf(AnsFile,',%s',num2str(Q1A/(Q1B/Q1C+8)));
 %     Second question
     Q2R = VarOOG1(itr)*VarOOH1(itr);
     fprintf(AnsFile,',%s',num2str(Q2R*(5/6)));
