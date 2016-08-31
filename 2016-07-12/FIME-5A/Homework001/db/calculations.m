@@ -31,6 +31,7 @@ for itr = 1:size(No1,1)
     Q2R = VarOOG1(itr)*VarOOH1(itr);
     fprintf(AnsFile,',%s',num2str(Q2R*(5/6)));
 %     Fourth question
+%     Figure 3
     Q4Omega = 2*pi*60;
     Q4R = VarOOH1(itr)*10;
     Q4XL = 1i*Q4Omega*VarOOI1(itr)/10;
@@ -40,14 +41,12 @@ for itr = 1:size(No1,1)
     Q4V_R = Q4I*Q4R;
     Q4V_XL = Q4I*Q4XL;
     Q4V_XC = Q4I*Q4XC;
-    Q4P_R = Q4V_R*Q4I;
-    Q4P_XL = Q4V_XL*Q4I;
-    Q4P_XC = Q4V_XC*Q4I;
-
+    Q4P_R = abs(Q4V_R*Q4I);
+    Q4P_XL = abs(Q4V_XL*Q4I);
+    Q4P_XC = -abs(Q4V_XC*Q4I);    
 %     Q4P_R = Q4I*Q4V_R;
 %     Q4P_XL = Q4I*Q4V_XL;
 %     Q4P_XC = Q4I*Q4V_XC;
-%     
     fprintf(AnsFile,',%s',num2str(Q4I));
     fprintf(AnsFile,',%s',num2str(Q4V_R));
     fprintf(AnsFile,',%s',num2str(Q4V_XL));
@@ -55,6 +54,31 @@ for itr = 1:size(No1,1)
     fprintf(AnsFile,',%s',num2str(Q4P_R));
     fprintf(AnsFile,',%s',num2str(Q4P_XL));
     fprintf(AnsFile,',%s',num2str(Q4P_XC));
+%     Figure 4
+    Q4Z1 = 1/(1/Q4R + 1/Q4XL + 1/Q4XC);
+    Q4Z = Q4R + Q4Z1;
+    Q4I = Q4V/Q4Z;
+    Q4V_R1 = Q4I*Q4R;
+    Q4V_R2 = Q4I*Q4Z1;
+    Q4I_R2 = Q4V_R2/Q4R;
+    Q4I_XL = Q4V_R2/Q4XL;
+    Q4I_XC = Q4V_R2/Q4XC;
+    Q4P_R1 = abs(Q4I*Q4V_R1);
+    Q4P_R2 = abs(Q4I_R2*Q4V_R2);
+    Q4P_XL = abs(Q4I_XL*Q4V_R2);
+    Q4P_XC = -abs(Q4I_XC*Q4V_R2);
+    fprintf(AnsFile,',%s',num2str(Q4V_R1));
+    fprintf(AnsFile,',%s',num2str(Q4V_R2));
+    fprintf(AnsFile,',%s',num2str(Q4I));
+    fprintf(AnsFile,',%s',num2str(Q4I_R2));
+    fprintf(AnsFile,',%s',num2str(Q4I_XC));
+    fprintf(AnsFile,',%s',num2str(Q4I_XL));
+    fprintf(AnsFile,',%s',num2str(Q4P_R1));
+    fprintf(AnsFile,',%s',num2str(Q4P_R2));
+    fprintf(AnsFile,',%s',num2str(Q4P_XL));
+    fprintf(AnsFile,',%s',num2str(Q4P_XC));
+    
+
 %     Q1A = Qtns(itr,1) + 1i*Qtns(itr,2);
 %     Q1B = Qtns(itr,3) + 1i*Qtns(itr,4);
 %     Q1C = Qtns(itr,5) + 1i*Qtns(itr,6);
@@ -81,7 +105,7 @@ for itr = 1:size(No1,1)
 %     Q4XC = 1/(1i*Q4Omega*Qtns(itr,10)*1e-6);
 %     Q4V = Qtns(itr,10)*10;
 %     Ans(itr,8) = (Q1AnsD);
-    for itr2 = 1:(52-5)
+    for itr2 = 1:(52-21)
         fprintf(AnsFile,',');
     end
     fprintf(AnsFile,'\n');
