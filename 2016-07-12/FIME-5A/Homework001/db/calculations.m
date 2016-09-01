@@ -71,8 +71,8 @@ for itr = 1:size(No1,1)
     fprintf(AnsFile,',%s',num2str(Q4V_R2));
     fprintf(AnsFile,',%s',num2str(Q4I));
     fprintf(AnsFile,',%s',num2str(Q4I_R2));
-    fprintf(AnsFile,',%s',num2str(Q4I_XC));
     fprintf(AnsFile,',%s',num2str(Q4I_XL));
+    fprintf(AnsFile,',%s',num2str(Q4I_XC));
     fprintf(AnsFile,',%s',num2str(Q4P_R1));
     fprintf(AnsFile,',%s',num2str(Q4P_R2));
     fprintf(AnsFile,',%s',num2str(Q4P_XL));
