@@ -61,9 +61,9 @@ for itr = 1:size(No1,1)
     fprintf(AnsFile,',%s',num2str(Q1IXL));
     fprintf(AnsFile,',%s',num2str(Q1IXC));
     
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1V, Q1Omega, VarOOF1(itr)/100)));
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VR1, Q1Omega, VarOOF1(itr)/100)));
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VR2, Q1Omega, VarOOF1(itr)/100)));
+    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1I, Q1Omega, VarOOF1(itr)/100)));
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1IR2, Q1Omega, VarOOF1(itr)/100)));
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1IXL, Q1Omega, VarOOF1(itr)/100)));
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1IXC, Q1Omega, VarOOF1(itr)/100)));
