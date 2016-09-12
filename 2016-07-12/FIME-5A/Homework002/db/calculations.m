@@ -41,7 +41,7 @@ for itr = 1:size(No1,1)
     fprintf(AnsFile,',%s',num2str(Q1VR));
     fprintf(AnsFile,',%s',num2str(Q1VXL));
     fprintf(AnsFile,',%s',num2str(Q1VXC));
-    fprintf(AnsFile,',%s',num2str(VarOOD1(itr)));
+    fprintf(AnsFile,',%s',num2str(VarOOF1(itr)));
     
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1V, Q1Omega, VarOOF1(itr)/100)));
     fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1I, Q1Omega, VarOOF1(itr)/100)));
