@@ -1,0 +1,187 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[cm]{fullpage}
+%\usepackage[spanish,mexico]{babel}
+
+\usepackage{siunitx}
+\sisetup{
+	output-complex-root = \ensuremath{\mathrm{j}},
+	complex-root-position = before-number
+}
+
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+%\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{datatool}
+
+
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{hhline}
+
+
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcommand{\Subject}{Circuit analysis II}
+\newcommand{\Group}{5A}
+\newcommand{\Carrera}{Electrical engineering}
+\newcommand{\ExamType}{Homework 2: A.C. Fundementals}
+\newcommand{\Date}{15/09/2016}
+\newcommand{\MaximumMarks}{10}
+\newcommand{\PName}{Dr. Suresh Kumar Gadi}
+
+
+\makeatletter
+% Blank/missing fields commands
+% \skipblank adds \\ to filled field; * version adds \space instead of newline
+\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+% \checkblank replaces blank fields with ***
+\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{***}{#1}}
+\makeatother
+
+\begin{document}
+	\linespread{2.5}
+	\DTLloaddb{addresses}{db/answeres.csv} % use your actual address database here
+	\DTLforeach*{addresses}{%
+		\VarOOA  =SKGVarA,
+		\VarOOB  =SKGVarB,
+		\VarOOC  =SKGVarC,
+		\VarOOD  =SKGVarD,
+		\VarOOE  =SKGVarE,
+		\VarOOF  =SKGVarF,
+		\VarOOG  =SKGVarG,
+		\VarOOH  =SKGVarH,
+		\VarOOI  =SKGVarI,
+		\VarOOJ  =SKGVarJ,
+		\VarOOK  =SKGVarK,
+		\VarOOL  =SKGVarL,
+		\VarOOM  =SKGVarM,
+		\VarOON  =SKGVarN,
+		\VarOOO  =SKGVarO,
+		\VarOOP  =SKGVarP,
+		\VarOOQ  =SKGVarQ,
+		\VarOOR  =SKGVarR,
+		\VarOOS  =SKGVarS,
+		\VarOOT  =SKGVarT,
+		\VarOOU  =SKGVarU,
+		\VarOOV  =SKGVarV,
+		\VarOOW  =SKGVarW,
+		\VarOOX  =SKGVarX,
+		\VarOOY  =SKGVarY,
+		\VarOOZ  =SKGVarZ,
+		\VarOOa  =SKGVara,
+		\VarOOb  =SKGVarb,
+		\VarOOc  =SKGVarc,
+		\VarOOd  =SKGVard,
+		\VarOOe  =SKGVare,
+		\VarOOf  =SKGVarf,
+		\VarOOg  =SKGVarg,
+		\VarOOh  =SKGVarh,
+		\VarOOi  =SKGVari,
+		\VarOOj  =SKGVarj,
+		\VarOOk  =SKGVark,
+		\VarOOl  =SKGVarl,
+		\VarOOm  =SKGVarm,
+		\VarOOn  =SKGVarn,
+		\VarOOo  =SKGVaro,
+		\VarOOp  =SKGVarp,
+		\VarOOq  =SKGVarq,
+		\VarOOr  =SKGVarr,
+		\VarOOs  =SKGVars,
+		\VarOOt  =SKGVart,
+		\VarOOu  =SKGVaru,
+		\VarOOv  =SKGVarv,
+		\VarOOw  =SKGVarw,
+		\VarOOx  =SKGVarx,
+		\VarOOy  =SKGVary,
+		\VarOOz  =SKGVarz,
+		\SName =Name,
+		\No =No}
+	{%
+		\setcounter{page}{1}
+		%\thispagestyle{empty}
+		\begin{center}
+			\begin{minipage}{.15\textwidth}
+				\begin{flushleft}
+					\includegraphics[width=\textwidth]{images/uadec-original}
+				\end{flushleft}
+			\end{minipage}
+			\begin{minipage}{.84\textwidth}
+				\begin{flushright}
+					{\Huge \textbf{Universidad Autónoma de Coahuila}}\\[2mm]
+					{\huge Facultad de Ingeniería Mecánica y Eléctrica}\\[2mm]
+					{\LARGE Unidad Torreón}
+				\end{flushright}
+			\end{minipage}
+		\end{center}
+		%\\[0.5cm]
+		\begin{center}
+			\setlength\doublerulesep{2pt}\doublerulesepcolor{LightCyan}
+			\begin{tabularx}{\textwidth}{ ||>{\columncolor{Gray}}l|X||>{\columncolor{Gray}}l|r|| }
+				\hhline{|t==:t:==t|}
+				Subject      		& \Subject  		& Group         	& \Group   					\\ \hhline{|:==::==:|}
+				Degree         		& \Carrera  		& Due for      		& \Date     				\\ \hhline{|:==::==:|}
+				Exam / Homework		& \ExamType    		& Registration \#	& \textbf{\textit{\No}}       				\\ \hhline{|:==::==:|}
+				Professor's name	& \PName			& Marks Obtained	& \underline{\hspace{1cm}} $\Big /10$				\\ \hhline{|:==:b:==:|}
+				Student's name		& \multicolumn{3}{X||}{\textbf{\textit{\MakeUppercase{\SName}}}}	\\ \hhline{|b====b|}
+			\end{tabularx}
+		\end{center}
+		\section*{Answers}
+		\begin{enumerate}
+			\item ~\\
+			\begin{tabularx}{\textwidth}{ XX }
+				\textbf{Figure 1} & \textbf{Figure 2} \\
+				\begin{enumerate}
+					\item $I = \SI{\VarOOA}{\ampere}$
+					\item $V_R = \SI{\VarOOB}{\volt}$
+					\item $V_L = \SI{\VarOOC}{\volt}$
+					\item $V_C = \SI{\VarOOD}{\volt}$
+					\item $v(0.0{\VarOOE}) = \SI{\VarOOF}{\volt}$
+					\item $i(0.0{\VarOOE}) = \SI{\VarOOG}{\ampere}$
+					\item $v_R(0.0{\VarOOE}) = \SI{\VarOOH}{\volt}$
+					\item $v_L(0.0{\VarOOE}) = \SI{\VarOOI}{\volt}$
+					\item $v_C(0.0{\VarOOE}) = \SI{\VarOOJ}{\volt}$
+				\end{enumerate}
+				&
+				\begin{enumerate}
+					\item $V_{R1} = \SI{\VarOOK}{\volt}$
+					\item $V_{R2} = V_{L} = V_{C} = \SI{\VarOOL}{\volt}$
+					\item $I_{R1} = \SI{\VarOOM}{\ampere}$
+					\item $I_{R2} = \SI{\VarOON}{\ampere}$
+					\item $I_{L} = \SI{\VarOOO}{\ampere}$
+					\item $I_{C} = \SI{\VarOOP}{\ampere}$
+					\item $v(0.0{\VarOOE}) = \SI{\VarOOF}{\volt}$
+					\item $v_{R1}(0.0{\VarOOE}) = \SI{\VarOOQ}{\volt}$
+					\item $v_{R2}(0.0{\VarOOE}) = v_{L}(0.0{\VarOOE}) = v_{C}(0.0{\VarOOE}) = \SI{\VarOOR}{\volt}$
+					\item $i_{R1}(0.0{\VarOOE}) = \SI{\VarOOS}{\ampere}$
+					\item $i_{R2}(0.0{\VarOOE}) = \SI{\VarOOT}{\ampere}$
+					\item $i_{L}(0.0{\VarOOE}) = \SI{\VarOOU}{\ampere}$
+					\item $i_{C}(0.0{\VarOOE}) = \SI{\VarOOV}{\ampere}$
+				\end{enumerate}
+				\\
+			\end{tabularx}
+			\item ~\\
+				\begin{center}
+					\begin{tabular}{ |c|r|r|r|r| } \hline
+						~& \textbf{RMS} & \textbf{ARV} & \textbf{Peak factor} & \textbf{Form factor} \\ \hline
+						a & \num{\VarOOW} & \num{\VarOOX} & \num{\VarOOY} & \num{\VarOOZ} \\ \hline
+						b & \num{\VarOOa} & \num{\VarOOb} & \num{\VarOOc} & \num{\VarOOd} \\ \hline
+						c & \num{\VarOOe} & \num{\VarOOf} & \num{\VarOOg} & \num{\VarOOh} \\ \hline
+						d & \num{\VarOOi} & \num{\VarOOj} & \num{\VarOOk} & \num{\VarOOl} \\ \hline
+						e & \num{\VarOOm} & \num{\VarOOn} & \num{\VarOOo} & \num{\VarOOp} \\ \hline
+						f & \num{\VarOOq} & \num{\VarOOq} & \num{1} 	  & \num{1} \\ \hline
+						g & \num{\VarOOr} & \num{\VarOOs} & \num{\VarOOt} & \num{\VarOOt} \\ \hline
+					\end{tabular}				
+				\end{center}
+		\end{enumerate}
+		
+		\clearpage
+	}
+\end{document}
