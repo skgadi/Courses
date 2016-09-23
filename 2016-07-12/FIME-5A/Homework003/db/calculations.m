@@ -25,90 +25,14 @@ for itr = 1:size(No1,1)
 %     Number and Name
     fprintf(AnsFile,'%s,%s',char(No1(itr)),char(Name1(itr)));
 %     First question
-    Q1Omega = 2*pi*VarOOE1(itr)*10;
-    Q1V = VarOOD1(itr)*10;
-    Q1R = VarOOA1(itr)*10;
-    Q1XL = 1i*Q1Omega*(VarOOB1(itr)/100);
-    Q1XC = -1i/(Q1Omega*(VarOOC1(itr)*1e-4));
-%     Figure 1
-    Q1Z = (Q1R+Q1XL+Q1XC);
-    Q1I = Q1V/Q1Z;
-    Q1VR = Q1I*Q1R;
-    Q1VXL = Q1I*Q1XL;
-    Q1VXC = Q1I*Q1XC;
-    
-    fprintf(AnsFile,',%s',num2str(Q1I));
-    fprintf(AnsFile,',%s',num2str(Q1VR));
-    fprintf(AnsFile,',%s',num2str(Q1VXL));
-    fprintf(AnsFile,',%s',num2str(Q1VXC));
-    fprintf(AnsFile,',%s',num2str(VarOOF1(itr)));
-    
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1V, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1I, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VR, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VXL, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VXC, Q1Omega, VarOOF1(itr)/100)));
-    
-%     Figure 2
-    Q1Z1 = 1/(1/Q1R + 1/Q1XL + 1/Q1XC);
-    Q1Z = Q1R + Q1Z1;
-    Q1I = Q1V/Q1Z;
-    Q1VR1 = Q1I*Q1R;
-    Q1VR2 = Q1I*Q1Z1;
-    Q1IR2 = Q1VR2/Q1R;
-    Q1IXL = Q1VR2/Q1XL;
-    Q1IXC = Q1VR2/Q1XC;
-    
-    fprintf(AnsFile,',%s',num2str(Q1VR1));
-    fprintf(AnsFile,',%s',num2str(Q1VR2));
-    fprintf(AnsFile,',%s',num2str(Q1I));
-    fprintf(AnsFile,',%s',num2str(Q1IR2));
-    fprintf(AnsFile,',%s',num2str(Q1IXL));
-    fprintf(AnsFile,',%s',num2str(Q1IXC));
-    
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VR1, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1VR2, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1I, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1IR2, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1IXL, Q1Omega, VarOOF1(itr)/100)));
-    fprintf(AnsFile,',%s',num2str(ComplexToIntantVal(Q1IXC, Q1Omega, VarOOF1(itr)/100)));
-    
-%     Second question
-%     Sine wave
-    fprintf(AnsFile,',%s',num2str(VarOOG1(itr)/sqrt(2)));
-    fprintf(AnsFile,',%s',num2str(VarOOG1(itr)*2/pi));
-    fprintf(AnsFile,',%s',num2str(sqrt(2)));
-    fprintf(AnsFile,',%s',num2str(pi/(2*sqrt(2))));
-%     Half-wave rectified sine
-    fprintf(AnsFile,',%s',num2str(VarOOI1(itr)/2));
-    fprintf(AnsFile,',%s',num2str(VarOOI1(itr)/pi));
-    fprintf(AnsFile,',%s',num2str(2));
-    fprintf(AnsFile,',%s',num2str(pi/2));
-%     Full-wave rectified sine
-    fprintf(AnsFile,',%s',num2str(VarOOK1(itr)/sqrt(2)));
-    fprintf(AnsFile,',%s',num2str(VarOOK1(itr)*2/pi));
-    fprintf(AnsFile,',%s',num2str(sqrt(2)));
-    fprintf(AnsFile,',%s',num2str(pi/(2*sqrt(2))));
-%     Triangle wave
-    fprintf(AnsFile,',%s',num2str(VarOOM1(itr)/sqrt(3)));
-    fprintf(AnsFile,',%s',num2str(VarOOM1(itr)/2));
-    fprintf(AnsFile,',%s',num2str(sqrt(3)));
-    fprintf(AnsFile,',%s',num2str(2/sqrt(3)));
-%     Sawtooth wave
-    fprintf(AnsFile,',%s',num2str(VarOOO1(itr)/sqrt(3)));
-    fprintf(AnsFile,',%s',num2str(VarOOO1(itr)/2));
-    fprintf(AnsFile,',%s',num2str(sqrt(3)));
-    fprintf(AnsFile,',%s',num2str(2/sqrt(3)));
-%     Rectangular wave
-    fprintf(AnsFile,',%s',num2str(VarOOQ1(itr)));
-%     Pulse wave
-    Q2DutyC = VarOOT1(itr)/10;
-    fprintf(AnsFile,',%s',num2str(VarOOS1(itr)*sqrt(Q2DutyC)));
-    fprintf(AnsFile,',%s',num2str(VarOOS1(itr)*Q2DutyC));
-    fprintf(AnsFile,',%s',num2str(1/sqrt(Q2DutyC)));
+    Q1Z1 = VarOOA1(itr) + VarOOB1(itr)*i;
+    Q1Z2 = VarOOC1(itr) + VarOOD1(itr)*i;
+    Q1Z = 3*Q1Z1+Q1Z2;
+    Q1Zeq = 1/(1/Q1Z+1/(2*Q1Z));
+    fprintf(AnsFile,',%s',num2str(Q1Zeq));
     
 %     Finishing the CSV line
-    for itr2 = 1:(52-45)
+    for itr2 = 1:(52-1)
         fprintf(AnsFile,',');
     end
     fprintf(AnsFile,'\n');
