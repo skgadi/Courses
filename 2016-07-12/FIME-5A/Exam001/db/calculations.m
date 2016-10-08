@@ -79,8 +79,12 @@ for itr = 1:size(No1,1)
                                 )...
                      );
     fprintf(AnsFile,',%s',num2str(Q2ARV));
+%     Third question
+
+    Q3Z = VarOOK1(itr) + VarOOL1(itr)*1i;
+    fprintf(AnsFile,',%s',num2str(Q3Z*3/4));
 %     Finishing the CSV line
-    for itr2 = 1:(52-6)
+    for itr2 = 1:(52-9)
         fprintf(AnsFile,',');
     end
     fprintf(AnsFile,'\n');
