@@ -28,8 +28,8 @@ for itr = 1:size(No1,1)
     Q1Z1 = VarOOA1(itr) + VarOOB1(itr)*1i;
     Q1Z2 = VarOOC1(itr) + VarOOD1(itr)*1i;
     Q1Z3 = 3*Q1Z1;
-    Q1Z4 = 1/(1/Q1Z3+1/Q1Z2);
-    Q1Zeq = 2/3*Q1Z4;
+    Q1Z3
+    Q1Zeq = 1/(1/Q1Z+1/(2*Q1Z));
     fprintf(AnsFile,',%s',num2str(Q1Zeq));
     
 %     Finishing the CSV line
