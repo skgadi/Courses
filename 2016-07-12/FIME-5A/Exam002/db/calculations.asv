@@ -38,25 +38,46 @@ for itr = 1:size(No1,1)
     Q1VR = ilaplace(Q1I*Q1R);
     Q1VL = ilaplace(Q1I*Q1XL);
     Q1VC = ilaplace(Q1I*Q1XC);
-    Q1Str = sprintf('AnsImage%d',itr);
-    
-    t= 0:0.0001:0.015;
+    t= 0:0.0001:0.01;
     f = figure;
     a = axes;
     set(a,'TickLabelInterpreter', 'tex');
-    plot(t,eval(Q1i), t,eval(Q1VR), t,eval(Q1VL), t,eval(Q1VC), 'linewidth', 2)
+    plot(t,eval(Q1i), t,eval(Q1VR), t,eval(Q1VL), t,eval(Q1VC))
     xlabel ('Time', 'Interpreter', 'latex')
     ylabel ('Voltage (V) / Current (A)', 'Interpreter', 'latex')
     legend({'$I$', '$V_R$', '$V_L$', '$V_C$'},'Interpreter','latex')
-    saveas(f,['../images/answers/', Q1Str],'epsc')
-    fprintf(AnsFile,',%s',Q1Str);
-    close (f)
+    
+    fprintf(AnsFile,',FileName%s',num2str(itr));
 
 %     Question 2
-    Q2RFreq = 1/(2*pi*sqrt(Q1L*Q1C));
-    fprintf(AnsFile,',%s',num2str(Q2RFreq));
+    Q2t0 = asin(0.1)/20/pi;
+    Q2t1 = asin(0.9)/20/pi;
+    Q2RMS = sqrt( 1/0.025*(...
+                                Q2t0 ...
+                                + 81*(0.025-Q2t1) ...
+                                + 100/2*(Q2t1-Q2t0) ...
+                                - 10/2/4/pi*( ...
+                                            sin(40*pi*Q2t1) ...
+                                            -sin(40*pi*Q2t0) ...
+                                )...
+                              )...
+            );
+    fprintf(AnsFile,',%s',num2str(Q2RMS));
+    Q2ARV = 1/0.025*(...
+                        Q2t0 ...
+                        + 9*(0.025-Q2t1) ...
+                        - 1/2/pi* ( ...
+                                cos(20*pi*Q2t1) ...
+                                - cos(20*pi*Q2t0) ...
+                                )...
+                     );
+    fprintf(AnsFile,',%s',num2str(Q2ARV));
+%     Third question
+
+    Q3Z = VarOOK1(itr) + VarOOL1(itr)*1i;
+    fprintf(AnsFile,',%s',num2str(Q3Z*3/4));
 %     Finishing the CSV line
-    for itr2 = 1:(52-2)
+    for itr2 = 1:(52-9)
         fprintf(AnsFile,',');
     end
     fprintf(AnsFile,'\n');
