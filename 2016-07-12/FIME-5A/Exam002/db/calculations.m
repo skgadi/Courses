@@ -44,10 +44,13 @@ for itr = 1:size(No1,1)
     f = figure;
     a = axes;
     set(a,'TickLabelInterpreter', 'tex');
-    plot(t,eval(Q1i), t,eval(Q1VR), t,eval(Q1VL), t,eval(Q1VC), 'linewidth', 2)
+    plot(t,eval(Q1VR), t,eval(Q1VL), t,eval(Q1VC), 'linewidth', 2)
     xlabel ('Time', 'Interpreter', 'latex')
-    ylabel ('Voltage (V) / Current (A)', 'Interpreter', 'latex')
-    legend({'$I$', '$V_R$', '$V_L$', '$V_C$'},'Interpreter','latex')
+    ylabel ('Voltage (V)', 'Interpreter', 'latex')
+    yyaxis right
+    plot(t,eval(Q1i), 'linewidth', 2)
+    ylabel ('Current (A)', 'Interpreter', 'latex')
+    legend({'$V_R$', '$V_L$', '$V_C$', '$I$'},'Interpreter','latex')
     saveas(f,['../images/answers/', Q1Str],'epsc')
     fprintf(AnsFile,',%s',Q1Str);
     close (f)
