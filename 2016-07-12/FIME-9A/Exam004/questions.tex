@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[cm]{fullpage}
+%\usepackage[spanish,mexico]{babel}
+
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+%\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{datatool}
+
+
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{hhline}
+
+
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcommand{\Subject}{Digital control}
+\newcommand{\Group}{9A}
+\newcommand{\Carrera}{Electrical engineering}
+\newcommand{\ExamType}{Exam (Extraordinary)}
+\newcommand{\Date}{09/12/2016}
+\newcommand{\MaximumMarks}{10}
+\newcommand{\PName}{Dr. Suresh Kumar Gadi}
+
+
+\makeatletter
+% Blank/missing fields commands
+% \skipblank adds \\ to filled field; * version adds \space instead of newline
+\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+% \checkblank replaces blank fields with ***
+\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{***}{#1}}
+\makeatother
+
+\begin{document}
+	\linespread{2.5}
+	\DTLloaddb{addresses}{db/questions.csv} % use your actual address database here
+	\DTLforeach*{addresses}{%
+		\VarOOA  =VarOOA,
+		\VarOOB  =VarOOB,
+		\VarOOC  =VarOOC,
+		\VarOOD  =VarOOD,
+		\VarOOE  =VarOOE,
+		\VarOOF  =VarOOF,
+		\VarOOG  =VarOOG,
+		\VarOOH  =VarOOH,
+		\VarOOI  =VarOOI,
+		\VarOOJ  =VarOOJ,
+		\VarOOK  =VarOOK,
+		\VarOOL  =VarOOL,
+		\VarOOM  =VarOOM,
+		\VarOON  =VarOON,
+		\VarOOO  =VarOOO,
+		\VarOOP  =VarOOP,
+		\VarOOQ  =VarOOQ,
+		\VarOOR  =VarOOR,
+		\VarOOS  =VarOOS,
+		\VarOOT  =VarOOT,
+		\VarOOU  =VarOOU,
+		\VarOOV  =VarOOV,
+		\VarOOW  =VarOOW,
+		\VarOOX  =VarOOX,
+		\VarOOY  =VarOOY,
+		\VarOOZ  =VarOOZ,
+		\VarOOa  =VarOOa,
+		\VarOOb  =VarOOb,
+		\VarOOc  =VarOOc,
+		\VarOOd  =VarOOd,
+		\VarOOe  =VarOOe,
+		\VarOOf  =VarOOf,
+		\VarOOg  =VarOOg,
+		\VarOOh  =VarOOh,
+		\VarOOi  =VarOOi,
+		\VarOOj  =VarOOj,
+		\VarOOk  =VarOOk,
+		\VarOOl  =VarOOl,
+		\VarOOm  =VarOOm,
+		\VarOOn  =VarOOn,
+		\VarOOo  =VarOOo,
+		\VarOOp  =VarOOp,
+		\VarOOq  =VarOOq,
+		\VarOOr  =VarOOr,
+		\VarOOs  =VarOOs,
+		\VarOOt  =VarOOt,
+		\VarOOu  =VarOOu,
+		\VarOOv  =VarOOv,
+		\VarOOw  =VarOOw,
+		\VarOOx  =VarOOx,
+		\VarOOy  =VarOOy,
+		\VarOOz  =VarOOz,
+		\SName =Name,
+		\No =No}
+	{%
+		\setcounter{page}{1}
+		%\thispagestyle{empty}
+		\begin{center}
+			\begin{minipage}{.15\textwidth}
+				\begin{flushleft}
+					\includegraphics[width=\textwidth]{images/uadec-original}
+				\end{flushleft}
+			\end{minipage}
+			\begin{minipage}{.84\textwidth}
+				\begin{flushright}
+					{\Huge \textbf{Universidad Autónoma de Coahuila}}\\[2mm]
+					{\huge Facultad de Ingeniería Mecánica y Eléctrica}\\[2mm]
+					{\LARGE Unidad Torreón}
+				\end{flushright}
+			\end{minipage}
+		\end{center}
+		%\\[0.5cm]
+		\begin{center}
+			\setlength\doublerulesep{2pt}\doublerulesepcolor{LightCyan}
+			\begin{tabularx}{\textwidth}{ ||>{\columncolor{Gray}}l|X||>{\columncolor{Gray}}l|r|| }
+				\hhline{|t==:t:==t|}
+				Subject      		& \Subject  		& Group         	& \Group   					\\ \hhline{|:==::==:|}
+				Degree         		& \Carrera  		& Due for      		& \Date     				\\ \hhline{|:==::==:|}
+				Exam / Homework		& \ExamType    		& Registration \#	& \textbf{\textit{\No}}       				\\ \hhline{|:==::==:|}
+				Professor's name	& \PName			& Marks Obtained	& \underline{\hspace{1cm}} $\Big /10$				\\ \hhline{|:==:b:==:|}
+				Student's name		& \multicolumn{3}{X||}{\textbf{\textit{\MakeUppercase{\SName}}}}	\\ \hhline{|b====b|}
+			\end{tabularx}
+		\end{center}
+		\section*{Instructions}
+		\begin{enumerate}
+			\item In the calculations, the student should maintain at least a precision of 3 decimal places with a correct rounding. (20\% of the marks obtained will be reduced)
+		\end{enumerate}
+		\section*{Questions}
+		\begin{enumerate}
+			\item Find the Z-transform of the function $u(k) = \left\{\VarOOA, \VarOOB, \VarOOC, \VarOOD, \VarOOE, \VarOOF, \VarOOG, \VarOOH, \VarOOI, \VarOOJ, 0, 0, 0 \right\}$. (2 points)
+			\item Apply Z-transform to the following equation. (2 points) $$y(k) = {\VarOOP}x(k)-x(k-1)-\frac{1}{{\VarOOQ}}y(k-1)$$
+			\item Find the inverse Z-transform of the following function. (2 points) $$F(z)=\frac{\VarOOJ}{1-z^{-1}}$$
+			\item Draw block diagram for the following transfer function. (2 points) $$\frac{y(z)}{x(z)}=\frac{z^2+{\VarOOK}z+{\VarOOO}}{{\VarOOL}z^2+{\VarOOM}z+{\VarOON}}$$
+			\item Determine the stability of the following system with the help of Jury’s test. (2 points)
+			$$F(z) = z^4 - 1.{\VarOOB}z^3 + 0.0{\VarOOC}z^2 + 0.{\VarOOD}z - 0.00{\VarOOE}$$
+		\end{enumerate}
+		
+		
+		\clearpage
+	}
+\end{document}
