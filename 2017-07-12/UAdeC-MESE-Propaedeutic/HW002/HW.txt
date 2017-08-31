@@ -1,0 +1,16 @@
+Write a list of Basic Differentiation Formulas to submit.
+Also, should be able to answer them in the classroom at any point of time during the course.
+
+Student may refere the following list.
+http://www.math.wustl.edu/~freiwald/131derivativetable.pdf
+
+-----
+
+Solve
+14, 15, 16, 17, 22
+from the 5.3 EXERCISE problems given in the page numbers from 107 to 116 of the following document.
+
+
+
+Document:
+http://ncert.nic.in/ncerts/l/leep205.pdf
