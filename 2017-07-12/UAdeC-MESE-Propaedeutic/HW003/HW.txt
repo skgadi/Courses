@@ -1,0 +1,20 @@
+Solve
+
+6, 8, 26, 27, 28, 33
+
+from the section 6.3 EXERCISE of the following document.
+
+Document 1:
+http://ncert.nic.in/ncerts/l/leep206.pdf
+
+
+-----
+
+Solve
+
+2, 5, 15, 38, 46, 47, 49, 62, 79
+
+from the following document.
+
+Document 2:
+http://www.sakshieducation.com/Previouspapers/PrevStory.aspx?nid=164409&cid=6&sid=104&chid=1509&tid=0
