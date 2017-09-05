@@ -1,0 +1,8 @@
+Using any technique solve
+
+1, 2, 3, 4, 5, 6
+
+from the "Taylor Series" section (page 11) of the following document.
+
+Document:
+http://tutorial.math.lamar.edu/getfile.aspx?file=C,23,P
