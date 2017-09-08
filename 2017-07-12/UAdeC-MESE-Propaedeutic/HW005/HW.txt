@@ -1,0 +1,15 @@
+Using any technique solve
+
+9, 14, 20, 26, 31, 34,
+
+from the "8.3 EXERCISES" section of the following document.
+
+Document:
+http://ncert.nic.in/ncerts/l/leep208.pdf
+
+
+Solve
+
+4, 6, 30, 31, 44, 52, 72,
+
+from http://www.sakshieducation.com/Previouspapers/PrevStory.aspx?nid=164409&cid=6&sid=104&chid=1509&tid=0
