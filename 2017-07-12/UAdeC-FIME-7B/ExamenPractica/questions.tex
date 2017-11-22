@@ -1,0 +1,185 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+
+\usepackage[cm]{fullpage}
+%\usepackage[spanish,mexico]{babel}
+
+\usepackage{siunitx}
+\sisetup{
+	output-complex-root = \ensuremath{\mathrm{j}},
+	complex-root-position = before-number
+}
+
+\usepackage[inline]{enumitem}
+
+\usepackage{graphicx}
+%\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{datatool}
+
+
+
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{hhline}
+
+
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcommand{\Subject}{Automatic Control}
+%\newcommand{\Group}{9B}
+\newcommand{\Carrera}{Mechanical engineering}
+\newcommand{\ExamType}{Practical Exam}
+\newcommand{\Date}{22/11/2017}
+\newcommand{\MaximumMarks}{10}
+\newcommand{\PName}{Suresh Kumar Gadi}
+
+
+\makeatletter
+% Blank/missing fields commands
+% \skipblank adds \\ to filled field; * version adds \space instead of newline
+\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+% \checkblank replaces blank fields with ***
+\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{***}{#1}}
+\makeatother
+
+
+\begin{document}
+	\linespread{2.5}
+\DTLloaddb{addresses}{db/questions.csv} % use your actual address database here
+\DTLforeach*{addresses}{%
+	\VarOOA  =VarOOA,
+	\VarOOB  =VarOOB,
+	\VarOOC  =VarOOC,
+	\VarOOD  =VarOOD,
+	\VarOOE  =VarOOE,
+	\VarOOF  =VarOOF,
+	\VarOOG  =VarOOG,
+	\VarOOH  =VarOOH,
+	\VarOOI  =VarOOI,
+	\VarOOJ  =VarOOJ,
+	\VarOOK  =VarOOK,
+	\VarOOL  =VarOOL,
+	\VarOOM  =VarOOM,
+	\VarOON  =VarOON,
+	\VarOOO  =VarOOO,
+	\VarOOP  =VarOOP,
+	\VarOOQ  =VarOOQ,
+	\VarOOR  =VarOOR,
+	\VarOOS  =VarOOS,
+	\VarOOT  =VarOOT,
+	\VarOOU  =VarOOU,
+	\VarOOV  =VarOOV,
+	\VarOOW  =VarOOW,
+	\VarOOX  =VarOOX,
+	\VarOOY  =VarOOY,
+	\VarOOZ  =VarOOZ,
+	\VarOOa  =VarOOa,
+	\VarOOb  =VarOOb,
+	\VarOOc  =VarOOc,
+	\VarOOd  =VarOOd,
+	\VarOOe  =VarOOe,
+	\VarOOf  =VarOOf,
+	\VarOOg  =VarOOg,
+	\VarOOh  =VarOOh,
+	\VarOOi  =VarOOi,
+	\VarOOj  =VarOOj,
+	\VarOOk  =VarOOk,
+	\VarOOl  =VarOOl,
+	\VarOOm  =VarOOm,
+	\VarOOn  =VarOOn,
+	\VarOOo  =VarOOo,
+	\VarOOp  =VarOOp,
+	\VarOOq  =VarOOq,
+	\VarOOr  =VarOOr,
+	\VarOOs  =VarOOs,
+	\VarOOt  =VarOOt,
+	\VarOOu  =VarOOu,
+	\VarOOv  =VarOOv,
+	\VarOOw  =VarOOw,
+	\VarOOx  =VarOOx,
+	\VarOOy  =VarOOy,
+	\VarOOz  =VarOOz,
+	\SGroup  =Group,
+	\SName =Name,
+	\No =No}
+{%
+	\setcounter{page}{1}
+	%\thispagestyle{empty}
+	\begin{center}
+		\begin{minipage}{.15\textwidth}
+			\begin{flushleft}
+				\includegraphics[width=\textwidth]{images/uadec-original}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}{.84\textwidth}
+			\begin{flushright}
+				{\Huge \textbf{Universidad Autónoma de Coahuila}}\\[2mm]
+				{\huge Facultad de Ingeniería Mecánica y Eléctrica}\\[2mm]
+				{\LARGE Unidad Torreón}
+			\end{flushright}
+		\end{minipage}
+	\end{center}
+	%\\[0.5cm]
+	\begin{center}
+		\setlength\doublerulesep{2pt}\doublerulesepcolor{LightCyan}
+		\begin{tabularx}{\textwidth}{ ||>{\columncolor{Gray}}l|X||>{\columncolor{Gray}}l|r|| }
+			\hhline{|t==:t:==t|}
+			Subject      		& \Subject  		& Group         	& \SGroup   					\\ \hhline{|:==::==:|}
+			Degree         		& \Carrera  		& Date      		& \Date     				\\ \hhline{|:==::==:|}
+			Exam / Homework		& \ExamType    		& Registration \#	& \textbf{\textit{\No}}       				\\ \hhline{|:==::==:|}
+			Professor's name	& \PName			& Marks Obtained	& \underline{\hspace{1cm}} $\Big /10$				\\ \hhline{|:==:b:==:|}
+			Student's name		& \multicolumn{3}{p{14cm}||}{\textbf{\textit{\MakeUppercase{\SName}}}}	\\ \hhline{|b====b|}
+		\end{tabularx}
+	\end{center}
+	%\section*{Instructions}
+	%\begin{enumerate}
+	%	\item Hello
+	%\end{enumerate}
+	%\gradetable[v][questions]
+	\addpoints
+	%\gradetable[h][questions]
+	\begin{center}
+		Evaluation table (Exclusive for teacher's use)\\
+		\partialgradetable{myrange}[h]
+	\end{center}
+	
+	
+	\begin{questions}
+		\begingradingrange{myrange}
+		\question[0]Objective: Close the loop with the following system such that the closed loop system becomes 
+		\if \VarOOA 1
+		stable without any oscillations.
+		\fi
+		\if \VarOOA 2
+		stable with oscillation
+		\fi
+		\if \VarOOA 3
+		instable with oscillation
+		\fi
+		\if \VarOOA 4
+		instable without oscillation
+		\fi
+		\if \VarOOA 5
+		Hello 5
+		\fi
+		\addpoints
+		\question[2]Materials required:
+		\addpoints
+		\question[2]Block diagram:
+		\addpoints		
+		\question[2]Procedure:
+		\addpoints
+		\question[2]Results expected (Include table if required):
+		\addpoints
+		\question[2]Conclusion:
+		\addpoints
+		\endgradingrange{myrange}
+	\end{questions}
+	\clearpage
+}
+\end{document}
