@@ -33,13 +33,19 @@ def compute_answers(questions):
     V2 = questions['VarOOB']
     V3 = questions['VarOOF']
     # Make resistance matrix
-    R = np.array([[R1 + R2, -R1, -R2],[-R1, R1 + R3 + R4, -R4],[-R2, -R4, R2 + R4]]);
+    
+    R = np.array([[0, -1, 1, 1, 0, 0],[0,0,0,1,1,-1],[1,1,0,0,0,-1],[0,R1,0,R4,0,R3],[0,0,R2,-R4,0,0],[0,0,0,0,0,R3]]);
+    #print(R)
     # Make voltage matrix
-    V = np.array([-V1-V2, V2, -V3]);
+    V = np.array([0,0,0, V2, V3, V1+V3]);
+    #print(V)
     # Solve for currents
-    I = np.linalg.solve(R, V)
-    # Current through resistance R4 is I[1]-I[2]
-    I_R4 = I[1] - I[2]
+    inv_R = np.linalg.inv(R)
+    I = np.dot(inv_R, V)
+    #print(I)
+    # Current through resistance R4 is I[3]
+    I_R4 = I[3]
+    #print(I_R4)
     # Power dissipated in R4
     P_R4 = I_R4**2 * R4
     # Round the answer to 3 decimal places
@@ -55,14 +61,16 @@ def compute_answers(questions):
     Z_RL = V_RL / I  # Impedance of resistor-inductor combination
     X_C = V_C / I  # Capacitive reactance in Ohms
     # calculate value of X_L and R_L
-    X_L = (Z_RL**2 - Z_L**2 - R**2) / (2 * R)
-    R_L = np.sqrt(Z_L**2 - X_L**2)
+    R_L = (Z_RL**2 - Z_L**2 - R**2) / (2 * R)
+    X_L = np.sqrt(Z_L**2 - R_L**2)
     #print(R, R_L, X_L, X_C)
     # Power consumed in the circuit
-    P = I**2 * (R + R_L)
+    P = I**2 * (R_L)
     answers['VarOOB'] = round(P, 3)
     # Total impedance of the circuit
+    #print(R+R_L, X_L - X_C)
     Z_total = np.sqrt((R + R_L)**2 + (X_L - X_C)**2)
+    #print(Z_total)
     # Applied voltage
     V_applied = I * Z_total
     answers['VarOOC'] = round(V_applied, 3)
@@ -71,7 +79,7 @@ def compute_answers(questions):
     I_toal = questions['VarOON']  # Total current in Amperes
     P_total = questions['VarOOO']  # Total power in Watts
     I_1 = I_toal / 2  # Current through first branch
-    P_1 = P_total / 2  # Power through first branch
+    P_1 = P_total   # Power through first branch
     R_1 = P_1 / (I_1**2)  # Resistance of first branch
     answers['VarOOD'] = round(R_1, 3)
     # return the computed answers as a Series
