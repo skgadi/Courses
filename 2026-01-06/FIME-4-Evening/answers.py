@@ -116,11 +116,11 @@ def compute_answers(questions):
     # finding answer for the tenth question.
     R = questions['VarOOZ'];
     L = questions['VarOOa'];
-    C = questions['VarOOc'];
+    C = questions['VarOOb']*1e-6;
     f1 = questions['VarOOd'];
     f2 = questions['VarOOe'];
-    omega0 = 1/math.sqrt(L*C);
-    answers['VarOOd'] = omega0/(2*cmath.pi);
+    f0 = 1/(2*cmath.pi*math.sqrt(L*C));
+    answers['VarOOd'] = f0;
     omega1 = 2*cmath.pi*f1;
     omega2 = 2*cmath.pi*f2;
     XL1 = omega1*L;
